@@ -1,0 +1,18 @@
+server:
+  port: 2222
+
+spring:
+  application:
+    name: weather-collect
+
+  redis:
+    host: localhost
+    port: 6379
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+api:
+  weather: https://free-api.heweather.com/s6/weather/forecast?location=%s&key=b1720e72fb124aadaeb7333ea6380efb
