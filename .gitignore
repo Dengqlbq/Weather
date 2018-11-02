@@ -1,0 +1,5 @@
+
+.DS_Store
+*.jar
+eureka/.mvn/wrapper/maven-wrapper.properties
+eureka/.mvn/wrapper/maven-wrapper.jar
