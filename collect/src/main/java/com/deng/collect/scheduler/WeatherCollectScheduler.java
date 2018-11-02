@@ -24,7 +24,7 @@ public class WeatherCollectScheduler {
     @Autowired
     private CityService cityService;
 
-    @Scheduled(fixedRate = 30 * 60)
+    @Scheduled(fixedDelay = 30 * 60 * 1000)
     public void collect() {
         Map<String, String> map = cityService.getCityList();
 
