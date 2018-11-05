@@ -26,8 +26,14 @@ public class CityDao {
     public Map<String, String> getCityData() {
         Map<String, String> map = new HashMap<>();
         try {
-            File file = ResourceUtils.getFile("classpath:city.txt");
-            InputStreamReader input = new InputStreamReader(new FileInputStream(file));
+            /**
+             *  File file = ResourceUtils.getFile("classpath:city.txt");
+             *  InputStreamReader input = new InputStreamReader(new FileInputStream(file));
+             *  这里在IDE中调试时可用，打成jar包后报错找不到文件
+             *  getResource方法中的File Path是编译后的路径
+             */
+            InputStream is = this.getClass().getResourceAsStream("/city.txt");
+            InputStreamReader input = new InputStreamReader(is);
             BufferedReader bufferedReader = new BufferedReader(input);
 
             String line = bufferedReader.readLine();
